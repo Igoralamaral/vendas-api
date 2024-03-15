@@ -19,6 +19,7 @@ export class UserService {
 
     return this.userRepository.save({
       ...createUserDTO,
+      typeUser: 1,
       password: passwordHash,
     });
   }
@@ -26,4 +27,6 @@ export class UserService {
   async getAllUser(): Promise<UserEntity[]> {
     return this.userRepository.find();
   }
+
+  
 }
